@@ -1,32 +1,40 @@
 .job-landing-page {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 40px;
 }
 
+
 .search-bar {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
+
 
 .search-bar input {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.job-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.job-item {
-  padding: 15px;
+  padding: 12px;
+  font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+
+.job-item {
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
 .job-item:hover {
-  background-color: #f0f0f0;
+  background-color: #edf2f7;
+  transform: scale(1.02);
 }

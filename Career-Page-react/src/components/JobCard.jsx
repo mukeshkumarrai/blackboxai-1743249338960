@@ -37,7 +37,8 @@ const JobCard = ({ job }) => {
         <div className="flex-1">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-bold text-gray-900">{job.title}</h3>
+<h3 className="text-xl font-bold text-gray-800">{job.title}</h3>
+
               <div className="flex items-center gap-2 mt-1">
                 <p className="text-gray-700 font-medium">{job.company.name}</p>
                 {job.company.rating && (
@@ -84,7 +85,8 @@ const JobCard = ({ job }) => {
               </span>
             </div>
             <div className="mt-2">
-              <p className="text-lg font-bold text-blue-600">
+<p className="text-lg font-bold text-blue-700">
+
                 ${job.salary.min.toLocaleString()} - ${job.salary.max.toLocaleString()} {job.salary.currency}
                 <span className="text-gray-600 text-sm ml-1">/ {job.salary.period}</span>
               </p>
@@ -120,8 +122,9 @@ const JobCard = ({ job }) => {
               <span>Posted {new Date(job.postedDate).toLocaleDateString()}</span>
             </div>
             <div className="flex gap-2">
-              <button 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium"
+<button 
+  className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium"
+
                 onClick={(e) => {
                   e.stopPropagation();
                   // Quick apply functionality
@@ -129,8 +132,9 @@ const JobCard = ({ job }) => {
               >
                 Quick Apply
               </button>
-              <button 
-                className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg text-sm font-medium"
+<button 
+  className="border border-blue-700 text-blue-700 hover:bg-blue-100 px-4 py-2 rounded-lg text-sm font-medium"
+
                 onClick={(e) => {
                   e.stopPropagation();
                   navigate(`/job/${job.id}`);

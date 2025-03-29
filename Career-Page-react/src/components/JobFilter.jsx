@@ -10,13 +10,15 @@ const JobFilter = ({ filters, setFilters }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm">
+<div className="bg-white p-6 rounded-lg shadow-md">
+
       <h3 className="font-medium text-lg mb-4">Filters</h3>
       
       <div className="space-y-6">
         {/* Job Type Filter */}
         <div>
-          <h4 className="text-sm font-medium text-gray-700 mb-2">Job Type</h4>
+<h4 className="text-sm font-medium text-gray-800 mb-2">Job Type</h4>
+
           <div className="space-y-2">
             {['Full-time', 'Part-time', 'Contract', 'Internship'].map(type => (
               <div key={type} className="flex items-center">
@@ -51,7 +53,8 @@ const JobFilter = ({ filters, setFilters }) => {
 
         {/* Salary Range Filter */}
         <div>
-          <h4 className="text-sm font-medium text-gray-700 mb-2">
+<h4 className="text-sm font-medium text-gray-800 mb-2">
+
             Salary Range (AUD)
           </h4>
           <Slider
@@ -89,8 +92,9 @@ const JobFilter = ({ filters, setFilters }) => {
           </select>
         </div>
 
-        <button
-          className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md text-sm"
+<button
+  className="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-md text-sm"
+
           onClick={() => setFilters({
             jobType: '',
             salaryRange: [0, 200000],

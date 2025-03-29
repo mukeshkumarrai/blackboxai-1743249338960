@@ -63,7 +63,6 @@ const jobs = [
   }
 ];
 
-
 const JobListing = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
@@ -89,41 +88,24 @@ const JobListing = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4 md:mb-0">Career Opportunities</h1>
-            <div className="relative w-full md:w-96">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <i className="fas fa-search text-gray-400"></i>
-              </div>
-              <input
-                type="text"
-                placeholder="Search jobs, companies, or keywords"
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-      </header>
+      
+
 
       <main className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Filters Sidebar */}
-          <div className="w-full lg:w-1/4">
-            <JobFilter filters={filters} setFilters={setFilters} />
-          </div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-          {/* Job Listings */}
+         
+
+        
           <div className="w-full lg:w-3/4">
-            <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-              <div className="px-4 py-5 sm:px-6 border-b border-gray-200">
-                <h3 className="text-lg leading-6 font-medium text-gray-900">
-                  {filteredJobs.length} {filteredJobs.length === 1 ? 'Job' : 'Jobs'} Found
-                </h3>
+<div className="bg-white shadow-md rounded-lg overflow-hidden">
+
+<div className="px-6 py-4 border-b border-gray-200">
+
+<h3 className="text-lg leading-6 font-medium text-gray-800">
+  {filteredJobs.length} {filteredJobs.length === 1 ? 'Job Found' : 'Jobs Found'}
+</h3>
+
               </div>
               <div className="divide-y divide-gray-200">
                 {filteredJobs.length > 0 ? (
@@ -131,8 +113,10 @@ const JobListing = () => {
                     <JobCard key={job.id} job={job} />
                   ))
                 ) : (
-                  <div className="p-8 text-center">
-                    <i className="fas fa-search text-4xl text-gray-300 mb-4"></i>
+<div className="p-6 text-center">
+
+<i className="fas fa-exclamation-circle text-4xl text-gray-400 mb-4"></i>
+
                     <h3 className="text-lg font-medium text-gray-900">No jobs found</h3>
                     <p className="mt-1 text-sm text-gray-500">
                       Try adjusting your search or filter criteria
