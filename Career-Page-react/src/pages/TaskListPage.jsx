@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import JobCard from "../components/JobCard";
 
 const TaskListPage = () => {
   const [tasks, setTasks] = useState([]); // State to store tasks
@@ -43,6 +44,7 @@ const fetchTasks = async () => {
         <ul>
           {tasks.length > 0 ? (
             tasks.map((task) => (
+              
               <li 
                 key={task.id}
                 className="p-2 hover:bg-gray-100 cursor-pointer" 
